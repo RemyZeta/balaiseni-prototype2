@@ -128,7 +128,7 @@
 <a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-primary dark:text-primary-container transition-colors group" href="activities.html">Activities<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-100 origin-center transition-transform duration-200"></span></a>
 <a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="collection.html">Collection<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
 <a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="artists.html">Artists<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
-<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="#">News<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="news.html">News<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
 </div>
 </div>
 <div class="flex items-center gap-1 md:gap-3">
@@ -146,7 +146,7 @@
 <a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-primary bg-wall-alt border-l-2 border-primary" href="activities.html">Activities</a>
 <a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="collection.html">Collection</a>
 <a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="artists.html">Artists</a>
-<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="#">News</a>
+<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="news.html">News</a>
 <a class="block px-margin-mobile py-3 mt-1 border-t border-line font-button text-button uppercase tracking-wide text-primary sm:hidden" href="#">Visit Us</a>
 </div>
 </nav>
@@ -164,7 +164,9 @@
 })();
 </script>
 <!-- Page Header -->
-<section class="w-full bg-wall px-margin-mobile md:px-margin-desktop py-24 md:py-32 flex flex-col gap-6">
+<section class="relative overflow-hidden w-full bg-wall px-margin-mobile md:px-margin-desktop py-24 md:py-32">
+<div class="absolute inset-0 z-0 pointer-events-none opacity-[0.09]" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%234A453C' stroke-width='1'%3E%3Ccircle cx='0' cy='0' r='39'/%3E%3Ccircle cx='140' cy='0' r='39'/%3E%3Ccircle cx='0' cy='140' r='39'/%3E%3Ccircle cx='140' cy='140' r='39'/%3E%3Ccircle cx='70' cy='70' r='39'/%3E%3C/g%3E%3C/svg%3E&quot;);background-repeat:repeat;background-size:140px 140px;"></div>
+<div class="relative z-10 flex flex-col gap-6">
 <div class="font-label-mono text-label-mono text-ink-muted uppercase flex items-center gap-2">
 <span class="w-4 h-[1px] bg-ink-muted"></span> Aktiviti
             </div>
@@ -180,6 +182,7 @@
 <a class="hover:text-primary transition-colors" href="#syarahan">Syarahan &amp; Lawatan</a>
 <span>·</span>
 <a class="hover:text-primary transition-colors" href="#pendidikan">Pendidikan</a>
+</div>
 </div>
 </section>
 <!-- 1. Featured Workshop -->
