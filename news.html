@@ -113,41 +113,66 @@
             background-color: theme('colors.wall');
             color: theme('colors.on-surface');
         }
+        @keyframes bsn-nav-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #mobile-nav > * { animation: bsn-nav-in 0.35s ease both; }
+        #mobile-nav > *:nth-child(1) { animation-delay: 0.04s; }
+        #mobile-nav > *:nth-child(2) { animation-delay: 0.08s; }
+        #mobile-nav > *:nth-child(3) { animation-delay: 0.12s; }
+        #mobile-nav > *:nth-child(4) { animation-delay: 0.16s; }
+        #mobile-nav > *:nth-child(5) { animation-delay: 0.20s; }
+        #mobile-nav > *:nth-child(6) { animation-delay: 0.24s; }
+        @media (prefers-reduced-motion: reduce) {
+            #mobile-nav > * { animation: none; }
+        }
     </style>
 </head>
-<body class="antialiased flex flex-col min-h-screen pt-16">
+<body class="antialiased flex flex-col min-h-screen pt-24">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface/95 backdrop-blur-md border-b border-line dark:border-outline-variant">
+<div class="h-8 flex items-center justify-between px-margin-mobile md:px-margin-desktop bg-wall-alt border-b border-line">
+<span class="font-label-mono text-label-mono text-ink-muted uppercase">Open Daily 10:00&ndash;18:00 &middot; Free Admission</span>
+<span class="hidden md:inline font-label-mono text-label-mono text-ink-muted uppercase">Jalan Temerloh, 50200 Kuala Lumpur</span>
+</div>
 <div class="h-16 flex justify-between items-center px-margin-mobile md:px-margin-desktop">
 <div class="flex items-center gap-10">
 <a href="index.html" class="flex items-center h-10 shrink-0">
     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvH--3QvhsbmTzMRLEAwY3IemjEqjvE-zcpzqwlBhUHQ0s2kTZD6WnYyqeeZsq7g5QecqXRk0oh2yHrejNR9NogrCIuGGUXWy3UKf81pgRbYyYLmSrdsChXQZRzD_wkVAjuvoClZdYkyxYQy547Z25D9NBy0I-rYHuIvWHzjrBWkzFbEcvbkEle_ryHzdX-LMHJi0vTrJChKgDI2GG1tCLIvjNljswov5LUy2BB-f_SWqxCjWLqIeX1ikSHWkenqX2CQ" alt="National Art Gallery Logo" class="h-full w-auto object-contain">
 <div class="flex items-center h-full ml-4 gap-4"><div class="w-[1px] h-6 bg-line"></div><span class="font-button text-button text-on-surface-variant uppercase tracking-wide">LPSVN</span></div></a>
 <div class="hidden md:flex items-center h-full">
-<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="exhibitions.html">Exhibitions<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
-<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="activities.html">Activities<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
-<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="collection.html">Collection<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
-<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="artists.html">Artists<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
-<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-primary dark:text-primary-container transition-colors group" href="news.html">News<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full gap-1.5 px-4 group" href="exhibitions.html"><span class="font-label-mono text-label-mono text-brass/60 relative -top-0.5 group-hover:text-brass transition-colors duration-200">01</span><span class="font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors duration-200">Exhibitions</span><span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full gap-1.5 px-4 group" href="activities.html"><span class="font-label-mono text-label-mono text-brass/60 relative -top-0.5 group-hover:text-brass transition-colors duration-200">02</span><span class="font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors duration-200">Activities</span><span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full gap-1.5 px-4 group" href="collection.html"><span class="font-label-mono text-label-mono text-brass/60 relative -top-0.5 group-hover:text-brass transition-colors duration-200">03</span><span class="font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors duration-200">Collection</span><span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full gap-1.5 px-4 group" href="artists.html"><span class="font-label-mono text-label-mono text-brass/60 relative -top-0.5 group-hover:text-brass transition-colors duration-200">04</span><span class="font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors duration-200">Artists</span><span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full gap-1.5 px-4 group" href="news.html"><span class="font-label-mono text-label-mono text-primary relative -top-0.5 transition-colors duration-200">05</span><span class="font-button text-button uppercase tracking-wide text-primary dark:text-primary-container transition-colors duration-200">News</span><span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-100 origin-center transition-transform duration-200"></span></a>
 </div>
 </div>
 <div class="flex items-center gap-1 md:gap-3">
-<button class="hidden md:flex items-center justify-center w-10 h-10 text-on-surface-variant hover:text-primary hover:bg-wall-alt dark:hover:bg-outline-variant rounded transition-colors" aria-label="Search">
+<button class="hidden md:flex items-center justify-center w-10 h-10 border border-line rounded-full text-on-surface-variant hover:text-primary hover:border-primary transition-colors" aria-label="Search">
 <span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
 </button>
-<a class="hidden sm:inline-flex items-center bg-primary-container text-on-primary-container font-button text-button px-6 py-2.5 rounded uppercase tracking-wide hover:opacity-90 transition-opacity" href="#">Visit Us</a>
+<a class="hidden sm:inline-flex items-center gap-1.5 bg-primary-container text-on-primary-container font-button text-button px-5 py-2.5 rounded uppercase tracking-wide hover:bg-ink hover:text-surface transition-colors" href="#">
+Visit Us<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
 <button id="nav-toggle" class="md:hidden flex items-center justify-center w-10 h-10 text-on-surface" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
 <span class="material-symbols-outlined text-2xl" id="nav-toggle-icon">menu</span>
 </button>
 </div>
 </div>
-<div id="mobile-nav" class="md:hidden hidden flex-col border-t border-line bg-surface">
-<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="exhibitions.html">Exhibitions</a>
-<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="activities.html">Activities</a>
-<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="collection.html">Collection</a>
-<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="artists.html">Artists</a>
-<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-primary bg-wall-alt border-l-2 border-primary" href="news.html">News</a>
-<a class="block px-margin-mobile py-3 mt-1 border-t border-line font-button text-button uppercase tracking-wide text-primary sm:hidden" href="#">Visit Us</a>
+<div id="mobile-nav" class="md:hidden hidden flex-col overflow-y-auto h-[calc(100vh-96px)] border-t border-line bg-wall">
+<a class="flex items-baseline gap-3 px-margin-mobile py-4 border-b border-line" href="exhibitions.html"><span class="font-label-mono text-label-mono text-brass">01</span><span class="font-headline-sm text-headline-sm text-on-surface">Exhibitions</span></a>
+<a class="flex items-baseline gap-3 px-margin-mobile py-4 border-b border-line" href="activities.html"><span class="font-label-mono text-label-mono text-brass">02</span><span class="font-headline-sm text-headline-sm text-on-surface">Activities</span></a>
+<a class="flex items-baseline gap-3 px-margin-mobile py-4 border-b border-line" href="collection.html"><span class="font-label-mono text-label-mono text-brass">03</span><span class="font-headline-sm text-headline-sm text-on-surface">Collection</span></a>
+<a class="flex items-baseline gap-3 px-margin-mobile py-4 border-b border-line" href="artists.html"><span class="font-label-mono text-label-mono text-brass">04</span><span class="font-headline-sm text-headline-sm text-on-surface">Artists</span></a>
+<a class="flex items-baseline gap-3 px-margin-mobile py-4 border-b border-line" href="news.html"><span class="font-label-mono text-label-mono text-primary">05</span><span class="font-headline-sm text-headline-sm text-primary">News</span></a>
+<div class="mt-auto px-margin-mobile py-4 border-t border-line bg-wall-alt">
+<a class="flex items-center justify-center gap-1.5 bg-primary-container text-on-primary-container font-button text-button px-6 py-3 rounded uppercase tracking-wide" href="#">
+Visit Us<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<p class="mt-3 text-center font-label-mono text-label-mono text-ink-muted uppercase">Open Daily 10:00&ndash;18:00 &middot; Free Admission</p>
+</div>
 </div>
 </nav>
 <script>
