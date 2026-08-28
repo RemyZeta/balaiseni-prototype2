@@ -1,0 +1,438 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Exhibitions · National Art Gallery</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#cfe5d3",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "wall": "#EAE6DC",
+                        "line": "#C7BFAE",
+                        "inverse-on-surface": "#ffede9",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#e8d6d3",
+                        "surface-container-low": "#fff0ee",
+                        "on-secondary-fixed-variant": "#384b3e",
+                        "secondary-fixed": "#d2e8d6",
+                        "primary-container": "#8a3324",
+                        "on-primary-fixed-variant": "#7e2a1c",
+                        "surface-container-high": "#f7e4e1",
+                        "on-surface": "#231918",
+                        "tertiary": "#004044",
+                        "surface": "#F7F5EF",
+                        "error": "#ba1a1a",
+                        "ink-muted": "#4A453C",
+                        "surface-bright": "#fff8f6",
+                        "on-tertiary-container": "#8aced4",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#0d1f14",
+                        "surface-variant": "#f1dedb",
+                        "tertiary-fixed": "#aaeef5",
+                        "secondary-fixed-dim": "#b6ccbb",
+                        "inverse-primary": "#ffb4a6",
+                        "primary-fixed-dim": "#ffb4a6",
+                        "on-secondary-container": "#536759",
+                        "brass": "#A9825A",
+                        "secondary": "#4f6355",
+                        "ink": "#17140F",
+                        "on-primary-container": "#ffad9e",
+                        "outline": "#89726e",
+                        "on-primary-fixed": "#3f0300",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#56423f",
+                        "on-background": "#231918",
+                        "surface-container-highest": "#f1dedb",
+                        "inverse-surface": "#392e2c",
+                        "outline-variant": "#dcc0bb",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#002022",
+                        "background": "#fff8f6",
+                        "primary": "#6b1d10",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#fdeae6",
+                        "tertiary-fixed-dim": "#8ed2d8",
+                        "primary-fixed": "#ffdad4",
+                        "surface-tint": "#9d4131",
+                        "wall-alt": "#E1DCCE",
+                        "tertiary-container": "#00595f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "room-padding-y": "80px",
+                        "gutter": "24px",
+                        "label-padding": "16px"
+                    },
+                    "fontFamily": {
+                        "button": ["IBM Plex Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-mono": ["IBM Plex Mono"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "button": ["13.5px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "headline-md": ["30px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-md": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-mono": ["11px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-sm": ["28px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["56px", { "lineHeight": "1.1", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.wall');
+            color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen pt-16">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface/95 backdrop-blur-md border-b border-line dark:border-outline-variant">
+<div class="h-16 flex justify-between items-center px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-10">
+<a href="index.html" class="flex items-center h-10 shrink-0">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvH--3QvhsbmTzMRLEAwY3IemjEqjvE-zcpzqwlBhUHQ0s2kTZD6WnYyqeeZsq7g5QecqXRk0oh2yHrejNR9NogrCIuGGUXWy3UKf81pgRbYyYLmSrdsChXQZRzD_wkVAjuvoClZdYkyxYQy547Z25D9NBy0I-rYHuIvWHzjrBWkzFbEcvbkEle_ryHzdX-LMHJi0vTrJChKgDI2GG1tCLIvjNljswov5LUy2BB-f_SWqxCjWLqIeX1ikSHWkenqX2CQ" alt="National Art Gallery Logo" class="h-full w-auto object-contain">
+<div class="flex items-center h-full ml-4 gap-4"><div class="w-[1px] h-6 bg-line"></div><span class="font-button text-button text-on-surface-variant uppercase tracking-wide">SPSV</span></div></a>
+<div class="hidden md:flex items-center h-full">
+<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-primary dark:text-primary-container transition-colors group" href="exhibitions.html">Exhibitions<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="activities.html">Activities<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="collection.html">Collection<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="artists.html">Artists<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+<a class="relative flex items-center h-full px-4 font-button text-button uppercase tracking-wide text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors group" href="#">News<span class="absolute left-4 right-4 bottom-0 h-[2px] bg-primary dark:bg-primary-container scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-200"></span></a>
+</div>
+</div>
+<div class="flex items-center gap-1 md:gap-3">
+<button class="hidden md:flex items-center justify-center w-10 h-10 text-on-surface-variant hover:text-primary hover:bg-wall-alt dark:hover:bg-outline-variant rounded transition-colors" aria-label="Search">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<a class="hidden sm:inline-flex items-center bg-primary-container text-on-primary-container font-button text-button px-6 py-2.5 rounded uppercase tracking-wide hover:opacity-90 transition-opacity" href="#">Visit Us</a>
+<button id="nav-toggle" class="md:hidden flex items-center justify-center w-10 h-10 text-on-surface" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+<span class="material-symbols-outlined text-2xl" id="nav-toggle-icon">menu</span>
+</button>
+</div>
+</div>
+<div id="mobile-nav" class="md:hidden hidden flex-col border-t border-line bg-surface">
+<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-primary bg-wall-alt border-l-2 border-primary" href="exhibitions.html">Exhibitions</a>
+<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="activities.html">Activities</a>
+<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="collection.html">Collection</a>
+<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="artists.html">Artists</a>
+<a class="block px-margin-mobile py-3 font-button text-button uppercase tracking-wide text-on-surface-variant hover:text-primary hover:bg-wall-alt transition-colors" href="#">News</a>
+<a class="block px-margin-mobile py-3 mt-1 border-t border-line font-button text-button uppercase tracking-wide text-primary sm:hidden" href="#">Visit Us</a>
+</div>
+</nav>
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle');
+  var menu = document.getElementById('mobile-nav');
+  var icon = document.getElementById('nav-toggle-icon');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function () {
+    var isHidden = menu.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+    icon.textContent = isHidden ? 'menu' : 'close';
+  });
+})();
+</script>
+<!-- Page Header -->
+<section class="w-full bg-wall px-margin-mobile md:px-margin-desktop py-24 md:py-32 flex flex-col gap-6">
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex items-center gap-2">
+<span class="w-4 h-[1px] bg-ink-muted"></span> Pameran
+            </div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">
+                Exhibitions
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                From solo retrospectives to thematic group shows, our galleries rotate exhibitions that trace the breadth of Malaysian and Nusantara visual art.
+            </p>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+<a class="hover:text-primary transition-colors" href="#sedang-berlangsung">Sedang Berlangsung</a>
+<span>·</span>
+<a class="hover:text-primary transition-colors" href="#akan-datang">Akan Datang</a>
+<span>·</span>
+<a class="hover:text-primary transition-colors" href="#arkib">Arkib</a>
+</div>
+</section>
+<!-- 1. Now Showing -->
+<section id="sedang-berlangsung" class="w-full px-margin-mobile md:px-margin-desktop py-room-padding-y bg-wall-alt">
+<div class="flex flex-col gap-12">
+<div class="flex justify-between items-end border-b border-line pb-4">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Now Showing</h2>
+<span class="font-label-mono text-label-mono text-ink-muted uppercase">Sedang Berlangsung</span>
+</div>
+<span class="font-label-mono text-label-mono text-ink-muted uppercase">4 Pameran</span>
+</div>
+<!-- Featured Exhibition -->
+<div class="flex flex-col md:flex-row gap-gutter items-center">
+<div class="w-full md:w-5/12 flex flex-col gap-6 order-2 md:order-1">
+<span class="font-label-mono text-label-mono text-primary uppercase border border-primary px-2 py-1 w-fit">Sedang Berlangsung</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+                    Nusa: Exploring Nusantara Identity
+                </h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col gap-1">
+<span>20 Okt 2023 — 14 Jan 2024</span>
+<span>Bilik 1 — 5 · Galeri Utama</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                    A visual exploration tracing cultural roots, unraveling the narrative of identity through masterpieces by local and regional artists.
+                </p>
+<div class="mt-4">
+<a class="inline-block bg-primary-container text-on-primary-container font-button text-button px-8 py-4 rounded uppercase tracking-wide hover:opacity-90 transition-opacity" href="#">
+                        View Exhibition
+                    </a>
+</div>
+</div>
+<div class="w-full md:w-7/12 relative order-1 md:order-2">
+<!-- Art Frame -->
+<div class="bg-surface border border-line p-[16px] relative z-10 w-full">
+<img class="w-full h-auto aspect-[4/3] object-cover" alt="The Mapping of Wayang Kertas by Mohd Azlan Mam Mohd Latib, mixed media, 2017" src="images/wayang-kertas-2017.jpg">
+</div>
+<!-- Wall Label (Overlapping) -->
+<div class="hidden md:flex absolute bottom-8 left-0 z-20 bg-surface border border-ink p-label-padding w-80 flex-col gap-3 translate-y-1/4 shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">The Mapping of Wayang Kertas</h4>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col gap-1">
+<span class="">MOHD AZLAN MAM MOHD LATIB</span>
+<span class="">MIXED MEDIA · 2017</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Now Showing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Exhibition 1 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Black-naped Oriole, naturalist bird painting from the exhibition Sayap-Sayap Nusantara" src="images/black-naped-oriole.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Sayap-Sayap Nusantara</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">SENI ALAM MALAYSIA</span>
+<span class="">8 OKT 2023 — 7 JAN 2024 · BILIK 2</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Vivid studies of Peninsular birds and their habitats, painted by Malaysia's leading naturalist artists.</p>
+</article>
+<!-- Exhibition 2 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Monsoon Series 3 by Suzlee Ibrahim, abstract acrylic painting" src="images/monsoon-series-3.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Irama Musim</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">SUZLEE IBRAHIM</span>
+<span class="">15 OKT 2023 — 21 JAN 2024 · BILIK 3</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestural canvases that summon the rhythm and arrival of the rainy season.</p>
+</article>
+<!-- Exhibition 3 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Madam by Amy Nazira, acrylic on canvas, 2021 — contemporary portrait" src="images/madam-2021.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Wajah</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">AMY NAZIRA · AKRILIK · 2021</span>
+<span class="">22 OKT 2023 — 4 FEB 2024 · BILIK 4</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Contemporary portraiture from the gallery's young collection — faces that hold memory, defiance, and grace.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- 2. Upcoming -->
+<section id="akan-datang" class="w-full px-margin-mobile md:px-margin-desktop py-room-padding-y bg-wall">
+<div class="flex flex-col gap-12">
+<div class="flex justify-between items-end border-b border-line pb-4">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Upcoming</h2>
+<span class="font-label-mono text-label-mono text-ink-muted uppercase">Akan Datang</span>
+</div>
+<span class="font-label-mono text-label-mono text-ink-muted uppercase">3 Pameran</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Exhibition 4 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Mountain landscape rendered in contemporary Chinese ink" src="images/mountainscape.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Tinta &amp; Puncak</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">LUKISAN TINTA</span>
+<span class="">MEMBUKA 26 JAN 2024 · BILIK 1</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Contemporary ink painting that climbs from calligraphic gesture to full mountain landscape.</p>
+</article>
+<!-- Exhibition 5 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Orchid batik by Ho He Kim, wax-resist dye on cloth" src="images/orchid-batik.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Rupa Bunga</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">HO HE KIM · BATIK</span>
+<span class="">MEMBUKA 9 FEB 2024 · BILIK 2</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">A garden of wax-resist blooms that carries the batik tradition into new formal territory.</p>
+</article>
+<!-- Exhibition 6 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="The Clift by Faizal Suhif, monoprint and oil on canvas, 2020" src="images/the-clift-2020.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Pucuk Penawar</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">FAIZAL SUHIF · MONOPRINT</span>
+<span class="">MEMBUKA 2 MAC 2024 · BILIK 3</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Healing plants and city cliffs — stencilled monoprints in which nature reclaims the urban.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- 3. Past Exhibitions -->
+<section id="arkib" class="w-full px-margin-mobile md:px-margin-desktop py-room-padding-y bg-wall-alt">
+<div class="flex flex-col gap-12">
+<div class="flex justify-between items-end border-b border-line pb-4">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Past Exhibitions</h2>
+<span class="font-label-mono text-label-mono text-ink-muted uppercase">Arkib Pameran</span>
+</div>
+<a class="font-button text-button text-primary hover:underline uppercase tracking-wide" href="#">Arkib Lengkap</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Exhibition 7 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Penang Street Scene by Tan Choon Ghee, watercolour, 1994" src="images/penang-street-scene-1994.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Tan Choon Ghee: Jelajah</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">TAN CHOON GHEE · CAT AIR · 1994</span>
+<span class="">TAMAT · MAC — MEI 2023 · BILIK 1 — 5</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">A survey of Penang's beloved watercolourist — street scenes rendered with unerring economy.</p>
+</article>
+<!-- Exhibition 8 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Installation view of the conservation exhibition, 2020" src="images/konservasi-2020.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Konservasi: Merawat Warisan</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">PANDANGAN PAMERAN</span>
+<span class="">TAMAT · 2020 · STUDIO KONSERVASI</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Inside the conservation studio — how the national collection is cleaned, repaired, and preserved.</p>
+</article>
+<!-- Exhibition 9 -->
+<article class="flex flex-col gap-4">
+<div class="bg-surface border border-line p-[12px] w-full">
+<img class="w-full h-auto aspect-[3/4] object-cover" alt="Installation view of the watercolour biennale, 2020" src="images/watercolor-biennale-2020.jpg">
+</div>
+<div class="bg-surface border border-ink p-4 flex flex-col gap-2 shadow-sm w-fit md:-mt-8 md:ml-8 relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight text-xl">Biennale Cat Air</h3>
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex flex-col">
+<span class="">PANDANGAN PAMERAN</span>
+<span class="">TAMAT · 2020 · BILIK 2</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Works on paper from across Southeast Asia, gathered for the gallery's watercolour biennale.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- 4. Visit Strip -->
+<section class="w-full bg-wall px-margin-mobile md:px-margin-desktop py-32 flex justify-center items-center">
+<div class="w-full max-w-3xl flex flex-col items-center gap-6 text-center">
+<div class="font-label-mono text-label-mono text-ink-muted uppercase flex items-center gap-2">
+<span class="w-4 h-[1px] bg-ink-muted"></span> Rancang Lawatan Anda
+            </div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Plan Your Visit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                The gallery is open daily, 9:00 — 17:00. Walk the rooms in any order — begin where your curiosity does.
+            </p>
+<div class="mt-4">
+<a class="inline-block bg-primary-container text-on-primary-container font-button text-button px-8 py-4 rounded uppercase tracking-wide hover:opacity-90 transition-opacity" href="#">
+                    Visit Us
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-room-padding-y px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-ink text-surface transition-all duration-200">
+<div class="flex flex-col gap-6">
+<span class="font-headline-sm text-headline-sm text-surface">NATIONAL ART GALLERY</span>
+<p class="font-body-md text-body-md text-surface-variant max-w-sm">
+                An agency under the Ministry of Tourism, Arts and Culture Malaysia. Conserving, exhibiting, and educating society through visual arts.
+            </p>
+<p class="font-label-mono text-label-mono text-surface-variant mt-4">
+                © 2024 NATIONAL ART GALLERY. All Rights Reserved.
+            </p>
+</div>
+<div class="flex flex-col md:flex-row gap-12 md:gap-24 font-body-md text-body-md">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-mono text-label-mono text-surface uppercase mb-2 border-b border-surface-variant pb-2">Links</h4>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Terms of Use</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Sitemap</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-mono text-label-mono text-surface uppercase mb-2 border-b border-surface-variant pb-2">Location</h4>
+<p class="text-surface-variant max-w-xs">
+                    No. 2, Jalan Temerloh,<br>
+                    Off Jalan Tun Razak,<br>
+                    53200 Kuala Lumpur,<br>
+                    Malaysia.
+                </p>
+</div>
+</div>
+</footer>
+
+
+</body></html>
